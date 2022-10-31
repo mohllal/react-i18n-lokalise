@@ -23,7 +23,13 @@ jobs:
       - name: Upload file to Lokalise
         run: |
          chmod +x ./scripts/upload.sh
-         ./scripts/upload.sh ${{ inputs.token }} ${{ inputs.project-id }} ${{ inputs.file-path }} ${{ inputs.language-iso }}
+         ./scripts/upload.sh  
         shell: bash
+        env:
+          LOKALISE_TOKEN: ${{ inputs.token }}
+          LOKALISE_PROJECT_ID: ${{ inputs.project-id }}
+          LANGUAGE_ISO: ${{ inputs.language-iso }}
+          TRANSLATION_FILE: ${{ inputs.file-path }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
        
     
