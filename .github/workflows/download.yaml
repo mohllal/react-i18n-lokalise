@@ -18,10 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Upload file to Lokalise
+      - name: Download file from Lokalise
         run: |
-         chmod +x ./scripts/upload.sh
-         ./scripts/upload.sh ${{ inputs.token }} ${{ inputs.project-id }} ${{ inputs.file-path }}
+         chmod +x ./scripts/download.sh
+         ./scripts/download.sh ${{ inputs.token }} ${{ inputs.project-id }} ${{ inputs.file-path }}
         shell: bash
        
     
