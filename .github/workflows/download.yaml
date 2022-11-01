@@ -31,6 +31,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
+          branch: create-pull-request/lokalise
+          branch-suffix: short-commit-hash
           delete-branch: true
           draft: false
           title: 'Lokalise: Translations update'
