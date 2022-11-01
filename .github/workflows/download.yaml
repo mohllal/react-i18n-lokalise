@@ -23,5 +23,5 @@ jobs:
          chmod +x ./scripts/download.sh
          ./scripts/download.sh ${{ inputs.token }} ${{ inputs.project-id }} ${{ inputs.file-path }}
         shell: bash
-       
-    
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
